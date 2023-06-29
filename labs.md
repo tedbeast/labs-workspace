@@ -137,6 +137,14 @@ ANG-CL-LIFECYCLE
 ANG-CL-MODELCLASS
 ANG-CL-OBSERVABLE
 ANG-CL-HTTPCLIENT
+## React
+RCT-CL-COMPONENTS
+RCT-CL-PROPS
+RCT-CL-STATE
+RCT-CL-CONDITIONAL-RENDERING
+RCT-CL-LISTS-AND-KEYS
+RCT-CL-FORMS
+RCT-CL-LIFTING-STATE
 ## Spring
 SPR-CL-DI
 SPR-CL-APPLICATIONCONTEXT
@@ -157,6 +165,7 @@ SPR-CL-RESPONSEENTITY
 SPR-CL-TRANSACTIONAL
 ## Docker
 DOC-CL-PULL
+DOC-CL-BUILD
 
 # How to use
 ## labs.properties
@@ -169,11 +178,15 @@ When you've run the Jar correctly, a set of text should appear instructing you h
 while the jar is running. You'll need to run labs.jar for every lab you open.
 ## Unit testing
 Many of the labs feature unit testing and TDD. Unit testing is a srategy used extensively in the professional world consisting of some code that can automatically run to ensure that some part of your code runs correctly. In this case, the test cases are there to quickly verify if you've successfully completed the lab. Because the labs provided use a variety of technologies, there are a couple different ways in which the labs need to be run.
-### Java, SQL, Javalin, Spring, Docker labs
+### Java, SQL, Javalin, Spring
 These labs are tested using Maven and JUnit. You will be required to have a working JDK of at least 11, as well as a working version of maven. You should verify that these are installed using `javac --version` and `mvn --version`. When opening a lab, you may need to click the "refresh" button visible in the top right when navigating the pom.xml file to "refresh java project". You can run the test cases using the terminal command `mvn test`. You wil have to get used to the Maven test output, which will display information about test cases and failures. The test case code itself will be located in the "test" folder of a lab and should NEVER be changed. The test cases are correctly written from the start. All of your cod3e changes should be made in files that explicitly tell you to modify them, usually with a TODO: statement. 
+### Docker labs
+Docker labs are tested with JUnit like the Docker labs, but Windows users will need to have the Docker daemon running while they run the lab (such as using Docker Desktop.)
 ### HTML/CSS/JavaScript labs
 If tests are present, they are tested using Maven, JUnit, and Selenium. Selenium requires a chrome web driver that might not be properly configured for your environment, so you should instead opt for manual testing via the browser. The HTML file associated with any particular lab may be opened directly in your browser: you can open the HTML file in your file explorer (either by navigating to your workspace's folder or finding the option to do so by right clicking on the file in your IDE.) After that, you can open any HTML file in your browser. The browser will display all the information you need to test your lab, and you can simply refresh the browser to display the most recent changes from your IDE.
 ### Angular labs
 These labs are tested using Node and Jasmine/Karma. You will be required to have a working version of node, which will come with npm. You can verify that it is installed `npm --version`. You will also need a working version of the Angular CLI, which can be installed with `npm install -g @angular/cli` and verified with `ng --version`. You can run the Angular project using `npm start`, which will start an Angular project that can be opened in a browser on the url `localhost:4200`. The landing page of the Angular app will explain all of the lab instructions. Some of the Angular labs feature unit tests written in Jasmine/Karma in spec.ts files. You can run them using the command `npm test`. Unlike in a Maven project, where all the tests are located in one centralized folder, the tests for every component will be located in a spec.ts file within the component. You can refer to the component that owns a particular test to see what ought to be changed to pass the test. A readme will also be provided pointing you to the right files to modify. If you are learning React, or are not learning a UI framework, then you can safely disregard Angular content during the training period. It is quite useful, however, so you are free to return to the content if you have some downtime after training.
+### React labs
+You will be required to have a working version of node, which will come with npm. You can verify that it is installed `npm --version`. You will need to start the labs using npm start. These labs do not have tests written yet, so you will need to rely on feedback from the broswer.
 
 lab content & labloader authored by ted balashov
